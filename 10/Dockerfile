@@ -1,12 +1,10 @@
 FROM pygmy/postgres:10
 
-MAINTAINER Maciej Lisiewski <maciej.lisiewski@gmail.com>
+ARG REPMGR_VERSION=4.0.6
+ARG REPMGR_SHA1=176fb053acd415306cad79483e868775fb4e3529
 
-ARG REPMGR_VERSION=4.0.2
-ARG REPMGR_SHA1=8d8b6e7402db32ef325fc8a5807ff4375ccb3535
-
-RUN apk add --no-cache --virtual .build-deps \
-        curl \
+RUN apk add -no-cache curl \
+    && apk add --no-cache --virtual .build-deps \
         make \
         gcc \
         postgresql-dev \
