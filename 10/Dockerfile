@@ -3,7 +3,7 @@ FROM pygmy/postgres:10
 ARG REPMGR_VERSION=4.0.6
 ARG REPMGR_SHA1=176fb053acd415306cad79483e868775fb4e3529
 
-RUN apk add -no-cache curl \
+RUN apk add --no-cache curl \
     && apk add --no-cache --virtual .build-deps \
         make \
         gcc \
